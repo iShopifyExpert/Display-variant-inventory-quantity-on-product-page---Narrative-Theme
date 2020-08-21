@@ -1,0 +1,10 @@
+add in product-template.liquid
+
+<span class="variant_inventory_quantity" data-inventory>{{ current_variant.inventory_quantity }}</span>
+ 
+<script>
+    window._VARIANTS = {};
+    {% for variant in product.variants %}
+    window._VARIANTS[{{ variant.id }}] = {{ variant.inventory_quantity }}
+      {% endfor %}
+ </script>
